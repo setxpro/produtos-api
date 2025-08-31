@@ -12,8 +12,6 @@ spec:
         - name: wildfly
           image: produtos:1.0.0
           imagePullPolicy: IfNotPresent
-          # REMOVER esta linha que causou o erro:
-          # args: ["-b","0.0.0.0"]
           ports: [{ containerPort: 8080, name: http }]
           readinessProbe:
             httpGet: { path: "/", port: 8080 }
