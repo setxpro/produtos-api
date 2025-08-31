@@ -10,7 +10,7 @@ Inclui instruções para rodar com **Docker** e **Kubernetes** (Docker Desktop e
 ## 📦 Estrutura
 
 ```css
-├─ src/main/java/com/exemplo/produtos/
+├─ src/main/java/com/produtos/
 │ ├─ JaxrsConfig.java # @ApplicationPath("/api")
 │ ├─ Produto.java # Entidade (com/sem @Entity)
 │ ├─ ProdutoRepository.java # Repositório (memória ou JPA)
