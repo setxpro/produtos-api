@@ -3,11 +3,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.exemplo</groupId>
+  <groupId>com.produtos</groupId>
   <artifactId>produtos</artifactId>
   <version>1.0.0</version>
   <packaging>war</packaging>
   <name>produtos</name>
+  <description>CRUD de Produtos (Jakarta EE/WildFly) com Docker e Kubernetes (Docker Desktop/Portainer)</description>
+  <url>https://github.com/setxpro/produtos</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
 
   <properties>
     <maven.compiler.release>17</maven.compiler.release>
@@ -31,7 +39,7 @@
       <scope>provided</scope>
     </dependency>
 
-    
+
   </dependencies>
 
 

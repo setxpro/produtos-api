@@ -121,4 +121,3 @@ kubectl scale deploy/produtos --replicas=2
 - PowerShell -H no curl: use Invoke-RestMethod ou curl.exe.
 - Pod CrashLoopBackOff por args: remova args se seu Dockerfile já define o CMD.
 - Imagem não encontrada no K8s: mantenha imagePullPolicy: IfNotPresent e use o mesmo engine do Docker Desktop.
-
