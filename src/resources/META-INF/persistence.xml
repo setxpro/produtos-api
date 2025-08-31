@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.1">
+  <persistence-unit name="produtosPU" transaction-type="JTA">
+    <!-- DataSource padrão do WildFly (H2) -->
+    <jta-data-source>java:/jboss/datasources/ExampleDS</jta-data-source>
+    <properties>
+      <!-- cria as tabelas no boot -->
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>

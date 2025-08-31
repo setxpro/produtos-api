@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: produtos
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: produtos } }
+  template:
+    metadata: { labels: { app: produtos } }
+    spec:
+      containers:
+        - name: wildfly
+          image: produtos:1.0.0
+          imagePullPolicy: IfNotPresent
+          # REMOVER esta linha que causou o erro:
+          # args: ["-b","0.0.0.0"]
+          ports: [{ containerPort: 8080, name: http }]
+          readinessProbe:
+            httpGet: { path: "/", port: 8080 }
+            initialDelaySeconds: 15
+          livenessProbe:
+            httpGet: { path: "/", port: 8080 }
+            initialDelaySeconds: 30
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: produtos
+spec:
+  selector: { app: produtos }
+  type: NodePort
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      nodePort: 31080
